@@ -22,7 +22,7 @@ class Client
     /**
      * The Guzzle Client.
      *
-     * @var GuzzleHttp\Client
+     * @var \GuzzleHttp\Client
      */
     private $guzzle;
 
