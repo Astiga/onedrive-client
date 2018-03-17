@@ -12,7 +12,7 @@ class Client
     /**
      * OneDrive API Root URL.
      */
-    const BASE_PATH = 'https://api.onedrive.com/v1.0';
+    const BASE_PATH = 'https://graph.microsoft.com/v1.0';
 
     /**
      * OneDrive Default Drive
@@ -614,7 +614,7 @@ class Client
     public function downloadItem($item_id, $params = array())
     {
         $item = $this->getItem($item_id);
-        $downloadUrl = $item->{'@content.downloadUrl'};
+        $downloadUrl = $item->{'microsoft.graph.downloadUrl'};
         $downloadedFile = $this->downloadFile($downloadUrl);
 
         return $downloadedFile;
@@ -669,7 +669,7 @@ class Client
         //Validate Conflict Behavior
         $this->validateConflictBehavior($behavior);
 
-        $body = ['name' => $title, '@name.conflictBehavior' => $behavior, 'folder' => new \StdClass()];
+        $body = ['name' => $title, '@microsoft.graph.conflictBehavior' => $behavior, 'folder' => new \StdClass()];
 
         //Json Encode Body
         $body = json_encode($body);
@@ -748,9 +748,9 @@ class Client
 
         $metadata = [
         'name' => $title,
-        '@name.conflictBehavior' => $behavior,
+        '@microsoft.graph.conflictBehavior' => $behavior,
         'file' => new \StdClass(),
-        '@content.sourceUrl' => 'cid:content', ];
+        '@microsoft.graph.sourceUrl' => 'cid:content', ];
 
         $content = $this->getFileContents($file);
         $mimeType = mime_content_type($file);
@@ -990,7 +990,7 @@ class Client
 
         $metadata = array();
 
-        $metadata["@content.sourceUrl"] = $url;
+        $metadata["@microsoft.graph.sourceUrl"] = $url;
         $metadata['file'] = new \StdClass();
 
         if (!is_null($name)) {

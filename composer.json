@@ -1,5 +1,5 @@
 {
-    "name": "kunalvarma05/onedrive-client",
+    "name": "koenvh1/onedrive-client",
     "description": "OneDrive PHP Client",
     "keywords" : ["onedrive", "client", "php"],
     "license": "MIT",
@@ -7,6 +7,10 @@
         {
             "name": "Kunal Varma",
             "email": "kunalvarma05@gmail.com"
+        },
+        {
+            "name": "Koen van Hove",
+            "email": "koen@koenvh.nl"
         }
     ],
     "require": {
