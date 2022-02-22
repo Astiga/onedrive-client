@@ -1,5 +1,5 @@
 {
-    "name": "koenvh1/onedrive-client",
+    "name": "astiga/onedrive-client",
     "description": "OneDrive PHP Client",
     "keywords" : ["onedrive", "client", "php"],
     "license": "MIT",
